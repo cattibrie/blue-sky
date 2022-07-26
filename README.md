@@ -37,6 +37,9 @@ The failing transaction is 'Withdrawal' that failed because there was not enough
 - check that the same dispute related transaction cannot happen twice;
 - check that 'Resolve' only valid after 'Dispute' and 'Chargeback' is only valid after 'Resolve'.
 
+Additional tests that I would add:
+- several dispute transaction of the same type related to the same client but different Transactions (Deposit, Withdrawal).
+
 ### Safety and Robustness
 If during the execution an error happens, the resulting info about accounts won't be printed.
 Instead the proccess will fail and show the reason of failure.
