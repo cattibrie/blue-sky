@@ -52,5 +52,9 @@ It is bad user experince if a user/client gets unreadable/invalid information.
 Current solution won't work right if it is a service that receives concurrent TCP streams. 
 In this case there should be a lock assosiated with every client.
 All the changes to a client should happen at the same time for every transaction before next transaction related to the same client may happen.
-What is chronological order between transaction from different streams?
+
+What is chronological order between transaction from different streams? A timestamp can be used. 
+
+There will be additional complication to deal with, like 
+- from the first stream comes a transaction to Client 1 with timestamp 2, and after that from another stream comes a transaction for the same Client 1 with timestamp 1. Timestamp 1 means that this transaction happend before Transaction with Timestamp 2.
 
